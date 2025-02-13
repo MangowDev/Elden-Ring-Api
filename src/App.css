@@ -1,0 +1,29 @@
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+.main-card-section{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.main-card-section h2{
+  text-align: center;
+  font-size: 30px;
+  color: #5a5cc3;
+  font-weight: 400;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+  margin-bottom: 50px;
+}
+
+.card-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
