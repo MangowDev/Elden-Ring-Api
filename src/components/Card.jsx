@@ -11,7 +11,7 @@ function Card(props) {
       <h3>{props.name}</h3>
       <div>
         <span>
-          Description: {props.description}
+          <strong>Description:</strong> {props.description}
         </span>
       </div>
     </div>

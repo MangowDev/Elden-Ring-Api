@@ -37,4 +37,9 @@
   align-self: left;
   font-size: 17px;
   text-align: left;
+  line-height: 25px;
+}
+
+.main-card-div strong{
+  color: #5a5cc3;
 }
