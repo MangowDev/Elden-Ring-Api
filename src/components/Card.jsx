@@ -4,16 +4,24 @@ import "./css/Card.css";
 function Card(props) {
   return (
     <div className="main-card-div">
-      <img
-        src={props.image}
-        alt={props.name}
-      ></img>
+      <div className="main-card-content">
+      {props.image ? <img src={props.image} alt={props.name} />: <h2>No image available.</h2>}
       <h3>{props.name}</h3>
+
       <div>
-        <span>
-          <strong>Description:</strong> {props.description}
-        </span>
+        {Object.entries(props).map(([key, value]) =>
+          key !== "image" && key !== "name" ? ( 
+            <span key={key}>
+              <strong>{key}: </strong> {value ? value : `No ${key} available`}
+            </span>
+          ) : null
+        )}
       </div>
+      </div>
+      <div className="view-button-div">
+      <button className="view-button">View</button>
+      </div>
+
     </div>
   );
 }

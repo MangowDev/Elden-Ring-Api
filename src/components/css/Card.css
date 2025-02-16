@@ -1,14 +1,20 @@
 .main-card-div {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: center;
-  align-items: center;
   color: #ffff;
   width: 25%;
   background-color: #23262a;
   padding: 20px;
   border: 1px solid #5a5cc3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-card-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: start;
+  align-items: center;
 }
 
 .main-card-div h3 {
@@ -40,6 +46,23 @@
   line-height: 25px;
 }
 
-.main-card-div strong{
+.main-card-div strong {
   color: #5a5cc3;
+}
+
+.view-button {
+  margin-top: 20px;
+  color: #ffff;
+  background-color: #191b1d;
+  border: 2px solid #5a5cc3;
+  padding: 8px 15px;
+  font-size: 18px;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+  font-weight: 500;
+}
+
+.view-button:hover {
+  cursor: pointer;
+  background-color: #5a5cc3;
 }

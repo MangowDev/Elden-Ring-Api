@@ -13,10 +13,3 @@ header {
   align-items: center;
   border-bottom: 3px solid #5a5cc3;
 }
-
-h1 {
-  font-weight: 200;
-  font-size: 75px;
-  color: #5a5cc3;
-  font-family: "EldenRing", sans-serif;
-}

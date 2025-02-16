@@ -33,14 +33,12 @@ function App() {
         {groupedData.map((group, index) => (
           <div key={index} className="card-section">
             {group.map((data) => {
-              return (
-                <Card
-                  key={data.id}
-                  image={data.image}
-                  name={data.name}
-                  description={data.description}
-                />
-              );
+              const dynamicProps = fieldList.reduce((acc, field) => {
+                acc[field] = data[field];
+                return acc;
+              }, {});
+
+              return <Card key={data.id} {...dynamicProps} />;
             })}
           </div>
         ))}
