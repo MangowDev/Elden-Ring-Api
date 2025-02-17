@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./css/Card.css";
 
 function Card(props) {
@@ -13,7 +14,7 @@ function Card(props) {
 
         <div>
           {Object.entries(props).map(([key, value]) =>
-            key !== "image" && key !== "name" ? (
+            key !== "image" && key !== "name" && key !== "id" ? (
               <span key={key}>
                 <strong>{key.charAt(0).toUpperCase() + key.slice(1)}: </strong>{" "}
                 {value ? value : `No ${key} available`}
@@ -23,7 +24,9 @@ function Card(props) {
         </div>
       </div>
       <div className="view-button-div">
-        <button className="view-button">View</button>
+        <Link className="card-link" to={`/card/${props.id}`}>
+          <button className="view-button">View</button>
+        </Link>
       </div>
     </div>
   );

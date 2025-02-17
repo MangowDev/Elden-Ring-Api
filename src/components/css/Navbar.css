@@ -47,3 +47,8 @@ li:hover {
   margin-right: 10px;
   font-size: 22px;
 }
+
+.nav-link{
+  text-decoration: none;
+  color: #ffff;
+}
