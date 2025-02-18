@@ -14,19 +14,6 @@ function Card(props) {
         
         {/* Mostramos el nombre de la card */}
         <h3>{props.name}</h3>
-
-        <div>
-          {/* Iteramos sobre las propiedades de props y las mostramos, excepto "image", "name" e "id" */}
-          {Object.entries(props).map(([key, value]) =>
-            key !== "image" && key !== "name" && key !== "id" ? (
-              <span key={key}>
-                {/* Capitalizamos la primera letra de cada campo y mostramos su valor */}
-                <strong>{key.charAt(0).toUpperCase() + key.slice(1)}: </strong>{" "}
-                {value ? value : `No ${key} available`}
-              </span>
-            ) : null
-          )}
-        </div>
       </div>
       
       {/* Botón para ver los detalles de la tarjeta */}

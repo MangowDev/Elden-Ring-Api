@@ -14,6 +14,7 @@ function Navbar({ setSection }) {
   // Función que se ejecuta cuando se hace clic en un enlace de la barra de navegación
   const handleClick = (section) => {
     setSection(section); // Actualiza la sección con el valor correspondiente al enlace
+    localStorage.setItem("section", section);
   };
 
   return (
