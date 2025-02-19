@@ -91,6 +91,7 @@
     display: flex;
     justify-content: left;
     padding-inline-start: 0px;
+    margin-block-end: 0;
   }
 
   .extra-fields-ul li{

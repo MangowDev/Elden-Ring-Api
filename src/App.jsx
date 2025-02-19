@@ -7,11 +7,13 @@ import Card from "./components/Card";
 import fields from "./utils/Atributes.js"; // Importamos los campos que se usarán en las cards (atributos)
 import SearchParams from "./components/SearchParams.jsx";
 import CardDetails from "./CardDetails.jsx";
+import Footer from "./components/Footer.jsx";
+import PageNavigator from "./components/PageNavigator.jsx";
 
 function App() {
   const [call, setCall] = useState([]); // Estado para almacenar los datos obtenidos de la API
   const [section, setSection] = useState("items"); // Estado para almacenar la sección seleccionada (por defecto "items")
-  const [numberElements, setNumberElements] = useState(21); // Estado para controlar cuántos elementos mostrar
+  const [numberElements, setNumberElements] = useState(18); // Estado para controlar cuántos elementos mostrar
   const [page, setPage] = useState(0); // Estado para controlar la página actual de la API
   const [url, setUrl] = useState(
     `https://eldenring.fanapis.com/api/${section}?limit=${numberElements}&page=${page}`
@@ -78,12 +80,14 @@ function App() {
                     })}
                   </div>
                 ))}
+                <PageNavigator page={page} setPage={setPage}/>
               </section>
             }
           />
           {/* Ruta para ver los detalles de una card específica, basada en su id */}
-          <Route path="/card/:id" element={<CardDetails/>} />
+          <Route path="/card/:id" element={<CardDetails sections={section}/>} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

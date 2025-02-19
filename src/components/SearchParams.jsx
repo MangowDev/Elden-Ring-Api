@@ -4,7 +4,7 @@ import "./css/SearchParams.css";
 function SearchParams({ setPage, setNumberElements }) {
   // Definimos los estados locales para la página y el número de elementos
   const [localPage, setLocalPage] = useState(0); // Estado para la página
-  const [localNumberElements, setLocalNumberElements] = useState(21); // Estado para el número de elementos por página
+  const [localNumberElements, setLocalNumberElements] = useState(18); // Estado para el número de elementos por página
 
   // Función que se ejecuta cuando se envía el formulario
   const handleSubmit = (e) => {
@@ -16,7 +16,7 @@ function SearchParams({ setPage, setNumberElements }) {
   // Función para restablecer los filtros (página y número de elementos)
   const resetFilter = () => {
     setLocalPage(0); // Restablecemos la página a 0
-    setLocalNumberElements(21); // Restablecemos el número de elementos a 21
+    setLocalNumberElements(18); // Restablecemos el número de elementos a 21
   };
 
   return (

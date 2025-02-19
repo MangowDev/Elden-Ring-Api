@@ -1,0 +1,34 @@
+.page-navigator-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    text-align: center;
+}
+
+.page-navigator-div button{
+    color: #ffffff;
+    background-color: #191b1d;
+    border: 2px solid #5a5cc3;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.page-navigator-div button:hover {
+    cursor: pointer;
+    background-color: #5a5cc3;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+  }
+  
+  .page-navigator-div button:active {
+    transform: scale(1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+  }

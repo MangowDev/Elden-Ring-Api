@@ -1,6 +1,18 @@
 #root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  background-color: #1c1e21;
 }
 
 .main-card-section{
