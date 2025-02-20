@@ -13,7 +13,7 @@ function Footer() {
     <footer>
       <div>
         <p>
-          © MangoDev - 2025 | <b>mangodev03@gmail.com</b>
+          - MangoDev - 2025 | <b>mangodev03@gmail.com</b>
         </p>
       </div>
       <div className="credits-div">

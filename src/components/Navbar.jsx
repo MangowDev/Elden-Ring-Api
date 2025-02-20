@@ -1,12 +1,12 @@
 import React from "react";
 import "./css/Navbar.css";
-import { FaMapMarkedAlt } from "react-icons/fa";
+import {FaMap, FaMapMarkerAlt} from "react-icons/fa";
 import {
   GiBlackKnightHelm,
   GiBroadsword,
   GiPotionBall,
   GiShoulderArmor,
-  GiGemPendant
+  GiGemPendant,
 } from "react-icons/gi";
 import { PiFinnTheHumanFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
@@ -58,7 +58,7 @@ function Navbar({ setSection }) {
           {/* Enlace para Locations */}
           <Link className="nav-link" to={`/`}>
             <li onClick={() => handleClick("locations")}>
-              <FaMapMarkedAlt className="custom-icon" /> Locations{" "}
+              <FaMapMarkerAlt className="custom-icon" /> Locations{" "}
               {/* Icono y texto para Locations */}
             </li>
           </Link>
@@ -74,6 +74,13 @@ function Navbar({ setSection }) {
             <li onClick={() => handleClick("bosses")}>
               <GiBlackKnightHelm className="custom-icon" /> Bosses{" "}
               {/* Icono y texto para Bosses */}
+            </li>
+          </Link>
+          {/* Enlace para Map */}
+          <Link className="nav-link" to={`/map`}>
+            <li>
+              <FaMap className="custom-icon" /> Map{" "}
+              {/* Icono y texto para Map */}
             </li>
           </Link>
         </ul>

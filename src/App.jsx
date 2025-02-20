@@ -10,6 +10,7 @@ import CardDetails from "./CardDetails.jsx";
 import Footer from "./components/Footer.jsx";
 import PageNavigator from "./components/PageNavigator.jsx";
 import EldenIconLoading from "./assets/images/EldenIconBig.png";
+import EldenMap from "./EldenMap.jsx";
 
 function App() {
   const [call, setCall] = useState([]); // Estado para almacenar los datos obtenidos de la API
@@ -121,6 +122,7 @@ function App() {
           />
           {/* Ruta para ver los detalles de una card específica, basada en su id */}
           <Route path="/card/:id" element={<CardDetails sections={section} />} />
+          <Route path="/map" element={<EldenMap/>} />
         </Routes>
         <Footer />
       </div>
