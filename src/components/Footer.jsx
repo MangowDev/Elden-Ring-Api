@@ -16,9 +16,9 @@ function Footer() {
           © MangoDev - 2025 | <b>mangodev03@gmail.com</b>
         </p>
       </div>
-      <div>
+      <div className="credits-div">
         <p>
-          Made with the{" "}
+          - Made with the{" "}
           <a href="https://docs.eldenring.fanapis.com/">
             <b>Elden Ring Open Source Api</b>
           </a>

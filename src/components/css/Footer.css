@@ -15,6 +15,16 @@ footer p{
     font-size: 21px;
 }
 
+footer div{
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+}
+
+.credits-div{
+    justify-content: center;
+}
+
 footer a{
     text-decoration: none;
     color: #5a5cc3;
@@ -28,6 +38,7 @@ footer a:hover{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: right;
     gap: 15px;
 }
 

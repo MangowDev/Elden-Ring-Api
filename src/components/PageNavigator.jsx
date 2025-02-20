@@ -4,12 +4,12 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 function PageNavigator({ page, setPage }) {
   const buttonRight = () => {
-    setPage(page + 1);
+    setPage(Number(page) + 1);
   };
 
   const buttonLeft = () => {
-    if (page !== 0) {
-      setPage(page - 1);
+    if (Number(page) !== 0) {
+      setPage(Number(page) - 1);
     }
   };
 
