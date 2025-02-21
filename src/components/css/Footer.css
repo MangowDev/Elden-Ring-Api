@@ -52,6 +52,6 @@ footer a:hover{
 }
 
 .social-media-div svg:hover{
-    padding: 12px;
+    transform: scale(1.1);
     transition: 0.2s;
 }

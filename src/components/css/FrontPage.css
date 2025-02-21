@@ -1,0 +1,97 @@
+.front-page-div {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/images/FrontPageCover2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; 
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+}
+
+.front-page-div.hidden{
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.front-page-info-div {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 30px;
+    backdrop-filter: blur(3px); 
+    box-shadow: 0px 0px 20px 5px rgba(84, 86, 227, 0.5); 
+    padding: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    animation: glowing-shadow 3s ease-in-out infinite; 
+}
+
+@keyframes glowing-shadow {
+    0% {
+        box-shadow: 0px 0px 20px 5px rgba(84, 86, 227, 0.3); 
+    }
+    50% {
+        box-shadow: 0px 0px 40px 10px rgba(84, 86, 227, 0.8);
+    }
+    100% {
+        box-shadow: 0px 0px 20px 5px rgba(84, 86, 227, 0.3);
+    }
+}
+
+
+
+.front-page-info-div h2{
+    text-align: center;
+    font-size: 32px;
+    color: #ffff;
+    font-weight: 400;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+}
+
+.front-page-info-div h3{
+    text-align: center;
+    font-size: 27px;
+    color: #ffff;
+    font-weight: 400;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+}
+
+.front-page-info-div span{
+    color: #5456e3;
+    font-weight: 600;
+}
+
+.front-page-info-div svg {
+    font-size: 33px;
+    color: #fff;
+    transition: 0.3s;
+    background-color: #5a5cc3;
+    padding: 16px;
+    border-radius: 50px;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    appearance: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.front-page-info-div svg:hover {
+    background-color: #4246c6;
+    transform: scale(1.1);
+}

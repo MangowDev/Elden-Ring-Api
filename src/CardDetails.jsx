@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import fields from "./utils/Atributes.js";
 import "./CardDetails.css";
 
-function CardDetails({sections}) {
+function CardDetails({ sections }) {
   const { id } = useParams(); // Obtenemos el parámetro 'id' de la URL para identificar qué tarjeta ver
   const [data, setData] = useState([]); // Inicializamos el estado para almacenar los datos de la tarjeta
   let section;
@@ -25,8 +25,8 @@ function CardDetails({sections}) {
   }, [section, id]); // Se ejecutara cada vez que la seccion o el id cambien
 
   const fieldList = fields[section];
-  
-   // Obtenemos la lista de campos para la sección actual desde fields.js
+
+  // Obtenemos la lista de campos para la sección actual desde fields.js
 
   return (
     <div className="main-card-details">
@@ -44,37 +44,53 @@ function CardDetails({sections}) {
         <h3>{data.name}</h3>
 
         <div className="card-details-info">
-          {" "}
           {/* Contenedor de la información de la tarjeta */}
+
           {/* Iteramos sobre los campos de la sección (fieldList) y mostramos los valores correspondientes */}
           {fieldList.map((field) => {
-            // Excluimos los campos "image", "name" e "id" para no mostrarlos en esta sección
-            let content;
+            let content; // Variable que almacenará el contenido a mostrar
+
+            // Excluimos los campos "image", "name" e "id" ya que ya se muestran antes
             if (field !== "image" && field !== "name" && field !== "id") {
-              if (field === "attack" || field === "resistance" || field === "defence" || field === "requiredAttributes" || field === "dmgNegation") {
-                content = data[field] && Array.isArray(data[field]) ? (
-                  <ul className="extra-fields-ul">
-                    {data[field].map((extraField, index) => (
-                      <li key={index}>
-                        {extraField.name}: {extraField.amount}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  `No ${field} available`
-                );
+              // Si el campo es uno de estos, significa que su valor es un array de objetos
+              if (
+                field === "attack" ||
+                field === "resistance" ||
+                field === "defence" ||
+                field === "requiredAttributes" ||
+                field === "dmgNegation"
+              ) {
+                // Verificamos que data[field] exista y sea un array antes de usar .map()
+                content =
+                  data[field] && Array.isArray(data[field]) ? (
+                    <ul className="extra-fields-ul">
+                      {data[field].map((extraField, index) => (
+                        <li key={index}>
+                          {/* Mostramos el nombre y el valor correspondiente */}
+                          {extraField.name}: {extraField.amount}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    // Si el campo no tiene datos, mostramos un mensaje de "No disponible"
+                    `No ${field} available`
+                  );
               } else {
+                // Si el campo es un valor simple (string, número, etc.), lo mostramos directamente
                 content = data[field] ? data[field] : `No ${field} available`;
               }
-              
-              
+
               return (
                 <span key={field}>
-                  <strong>{field.charAt(0).toUpperCase() + field.slice(1)}: </strong>
+                  {/* Mostramos el nombre del campo en negrita y su contenido */}
+                  <strong>
+                    {field.charAt(0).toUpperCase() + field.slice(1)}:{" "}
+                  </strong>
                   {content}
                 </span>
               );
             }
+
             return null; // Si el campo es "image", "name" o "id", no lo mostramos
           })}
         </div>

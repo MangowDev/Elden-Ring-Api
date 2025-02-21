@@ -11,6 +11,7 @@ import Footer from "./components/Footer.jsx";
 import PageNavigator from "./components/PageNavigator.jsx";
 import EldenIconLoading from "./assets/images/EldenIconBig.png";
 import EldenMap from "./EldenMap.jsx";
+import FrontPage from "./components/FrontPage.jsx";
 
 function App() {
   const [call, setCall] = useState([]); // Estado para almacenar los datos obtenidos de la API
@@ -25,18 +26,23 @@ function App() {
   const [loading, setLoading] = useState(false); // Estado para manejar la carga
   const fieldList = fields[section]; // Obtenemos los campos que corresponden a la sección actual
 
+  // useEffect para actualizar el almacenamiento local con el numero de elementos y el numero de página
   useEffect(() => {
+
+    // Si la pagina es nulo, es igual a 0
     if (localStorage.getItem("page") === null) {
       localStorage.setItem("page", 0);
     }
 
+    // Si el numero de elementos es nulo, es igual a 18
     if (localStorage.getItem("numberElements") === null) {
       localStorage.setItem("numberElements", 18);
     }
 
+    // Actualizamos el localStorage con los datos correspondientes
     localStorage.setItem("page", page);
     localStorage.setItem("numberElements", numberElements);
-  }, [numberElements, page]);
+  }, [numberElements, page]); // Se ejecuta cada vez que cambian numberElements o page
 
   // useEffect para actualizar la URL cuando cambian los valores de section, numberElements o page
   useEffect(() => {
@@ -73,6 +79,7 @@ function App() {
     <Router>
       {/* Contenedor de la aplicación que permite la navegación entre rutas */}
       <div className="content">
+        <FrontPage/>
         <Header />
         {/* Componente Navbar que permite cambiar la sección */}
         <Navbar setSection={setSection} />
